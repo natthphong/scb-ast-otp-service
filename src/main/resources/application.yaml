@@ -1,0 +1,11 @@
+server:
+  port: 8080
+
+app:
+  limit: 5
+  wrongLimit: 3
+  plusMinutes: 3
+
+redis:
+  server: localhost
+  port: 6379

@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scb-ast-otp-service-deployment
+  namespace: ast-dev
+  labels:
+    app: scb-ast-otp-service-label
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scb-ast-otp-service-deployment
+  template:
+    metadata:
+      labels:
+        app: scb-ast-otp-service-deployment
+    spec:
+      containers:
+        - name: scb-ast-otp-service-deployment-container
+          image: 083888084688.dkr.ecr.ap-southeast-1.amazonaws.com/scb-ast-otp-service:dev
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /scb/autosale/actuator/health
+              port: http
+            failureThreshold: 3
+            periodSeconds: 30
+          readinessProbe:
+            httpGet:
+              path: /scb/autosale/actuator/health
+              port: http
+            failureThreshold: 3
+            periodSeconds: 30
+          env:
+            - name: JAVA_OPTS
+              value: "-Xms256m -Xmx1024m"
+            - name: JAVA_CONFIGS
+              value: "--spring.config.location=/home/app/config/application.yaml"
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: scb-ast-otp-service-secret
+                  key: spring.datasource.username
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: scb-ast-otp-service-secret
+                  key: spring.datasource.password
+            - name: SPRING_DATASOURCE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: scb-ast-otp-service-secret
+                  key: spring.datasource.url
+            - name: MY_POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+          volumeMounts:
+            - name: scb-ast-otp-service-volume
+              mountPath: /home/app/config/application.yaml
+              subPath: application.yaml
+            - name: scb-ast-otp-service-volume
+              mountPath: /home/app/config/application.text
+              subPath: application.text
+      volumes:
+        - name: scb-ast-otp-service-volume
+          configMap:
+            name: scb-ast-otp-service-configmap
+

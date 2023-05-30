@@ -1,0 +1,12 @@
+{
+    "Credentials": {
+        "AccessKeyId": "ASIARHCA6S3IM4MKPZGI",
+        "SecretAccessKey": "9tZcwB3SewqU1rGaLHyOWiLTKMlQKBe6/YU9i4z5",
+        "SessionToken": "IQoJb3JpZ2luX2VjEFAaDmFwLXNvdXRoZWFzdC0xIkcwRQIgLmLp+6fIySicHsdtsBfDkmhatM7ua63E3fqdM5N3ClQCIQCppFX4ZM2j66FSm2u6x6tr8ojTo54+9dPeSk5Xe+RvWSqpAgiJ//////////8BEAQaDDA4Mzg4ODA4NDY4OCIMn5s3XQtgyZXED4yAKv0B3PquJF5OrzenKzxj6lDAbjo/33w8Pns0rQRvCAeF4d/umHDE9FUoa002ojpns+SQ5ymNw+XMopsipam//qsNBcPc0dtCyQn4+ghAue5zE13iYyHQZLVeOvzS5jjQ5B8l/zcO5L2lm6KpCm6zRffjCRLvnfOnCv1tqTTRo1wfgQynHFYKCeubBLKipUXJjrWKQHOmwRwrXpgKmh2i28ZDVWhSWkeuNrvhsFstCMPUyJHKo5H2DKigM2g3PUYypP2o2IOk6lD2t5mWA6RBFvKukTQCKC/Q+T6KgvmVTJmcGqf3pqSpJjCMUXIv5UlP3WTxJjb0Twy8w3+2zbAKQTC03tajBjqdAbVIvEkEvtG/jwXWwp8qQR74+NR8pn2vkFkdUkMLwQBjtpdEB61c0o4xeE5dz/x5B5sR+N3mTHtn37SELFApR/X5Td12bceWiLQWTjxdVME9kQUpqsrupr6B5ZFIqRxVw+lZFcz7FvPx+sOcW8KJ3ARkA5/mi9zzPujqa6cP7tbY6TqPnNZpqtgYfOWLsaZxpTob5g0XiPV+aT5TjCA=",
+        "Expiration": "2023-05-30T09:09:24+00:00"
+    },
+    "AssumedRoleUser": {
+        "AssumedRoleId": "AROARHCA6S3IMNBA3OV4Y:gl-accounting-prior",
+        "Arn": "arn:aws:sts::083888084688:assumed-role/gl-acct-nonprod-containerize-admin/gl-accounting-prior"
+    }
+}
